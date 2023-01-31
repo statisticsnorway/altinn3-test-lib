@@ -71,7 +71,6 @@ jobs:
           python -m build
           echo Running twine check dist
           twine check dist/*
-          echo Push to PyPi and Artifact Registry
+          echo Push to PyPi
           twine upload dist/* -u __token__ -p $(PYPI_API_TOKEN)
-          twine upload --repository-url https://europe-north1-python.pkg.dev/artifact-registry-14da/ssb-python/ dist/*
         displayName: 'Run sdist, bdist, twine'
