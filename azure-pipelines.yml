@@ -36,7 +36,8 @@ jobs:
   - job: releaseToPypi
     displayName: "Release to PyPi"
     # Job condition: trigger on any tag
-    condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/'))
+    condition: not(startsWith(variables['Build.SourceBranch'], 'refs/tags/'))
+    # condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/tags/'))
     
     steps:
       - task: UsePythonVersion@0
