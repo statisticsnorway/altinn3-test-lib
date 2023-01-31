@@ -4,3 +4,4 @@ pytest_mock
 ssb-altinn3-util
 google-cloud-pubsub
 toml
+build
