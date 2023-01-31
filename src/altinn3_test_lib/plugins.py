@@ -2,10 +2,10 @@ all_vars = set(dir())
 
 # plugin references goes here
 
-mocking_environment = "test_lib_poc.fixtures.mocking.environment_vars"
-factories_altinn = "test_lib_poc.fixtures.factories.altinn_factory"
-factories_gcp = "test_lib_poc.fixtures.factories.gcp_factories"
-factories_file = "test_lib_poc.fixtures.factories.file_factory"
+mocking_environment = "altinn3_test_lib.fixtures.mocking.environment_vars"
+factories_altinn = "altinn3_test_lib.fixtures.factories.altinn_factory"
+factories_gcp = "altinn3_test_lib.fixtures.factories.gcp_factories"
+factories_file = "altinn3_test_lib.fixtures.factories.file_factory"
 
 # create list of plugin reference names
 temp_list = set(dir()) - all_vars
