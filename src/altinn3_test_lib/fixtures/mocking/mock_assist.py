@@ -1,4 +1,4 @@
-from typing import Dict, Optional
+from typing import Dict, Optional, Tuple
 
 import pytest
 from pytest_mock.plugin import MockerFixture
@@ -24,14 +24,16 @@ def mocker_factory(mocker: MockerFixture):
         if isinstance(args[0], str):
             return add_mock(args[0], **kwargs)
 
-    def add_mocks(mock_refs: Dict[str, Optional[MockBehavior]]):
+    def add_mocks(mock_refs: Dict[str, Optional[MockBehavior]]) -> Tuple[MagicMock]:
         """
         Adds a collection of mocks to the current test function.
         :param mock_refs: A dictionary of mock identifiers and behaviors
-        :return: None
+        :return: tuple of mocks created in order of creation
         """
+        mocks = []
         for key in mock_refs.keys():
-            _ = add_mock(key, mock_refs[key])
+            mocks.append(add_mock(key, mock_refs[key]))
+        return tuple(mocks)
 
     def add_mock(object_ref: str, behavior: Optional[MockBehavior] = None) -> MagicMock:
         """
