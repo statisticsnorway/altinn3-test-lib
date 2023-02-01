@@ -19,10 +19,6 @@ def basic_file_factory():
 
 
 @pytest.fixture(scope="function")
-def create_hello():
-    return "Hello!"
+def tut_og_kjor():
+    return "Hei på deg!"
 
-
-@pytest.fixture(scope="function")
-def create_bye_bye():
-    return "Bye!"
