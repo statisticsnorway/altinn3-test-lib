@@ -15,7 +15,8 @@ def mocker_factory(mocker: MockerFixture):
     (from altinn3_test_lib.resources.mocking import MockBehavior).
 
     :param mocker: default pytest mocker fixture.  Used for mock building.  Injected automatically
-    :return: EITHER a MagicMock object, if called with a single mock-request OR nothing, if a collection is supplied.
+    :return: EITHER a MagicMock object, if called with a single mock-request OR a collection of mocks, in order of
+    creation, if a collection is supplied as input.
 
     """
     def mock_selector(*args, **kwargs):
