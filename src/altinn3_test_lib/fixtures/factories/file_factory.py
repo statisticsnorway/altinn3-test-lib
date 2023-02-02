@@ -1,5 +1,6 @@
 import pytest
 from ssb_altinn3_util.models.basic_file import BasicFile
+from altinn3_test_lib.utils.fileutils import read_file_lines_into_object
 
 
 @pytest.fixture(scope="function")
@@ -19,10 +20,6 @@ def basic_file_factory():
 
 
 @pytest.fixture(scope="function")
-def create_hello():
-    return "Hello!"
+def create_instance():
+    return read_file_lines_into_object("instance.json")
 
-
-@pytest.fixture(scope="function")
-def create_bye_bye():
-    return "Bye!"
