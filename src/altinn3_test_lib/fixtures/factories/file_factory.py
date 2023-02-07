@@ -31,8 +31,13 @@ def create_instance():
 
 
 @pytest.fixture(scope="function")
-def create_instance_json():
-    return read_file_lines_into_object("instance_json.json")
+def create_instance_json_out():
+    return read_file_lines_into_object("instance_json_out.json")
+
+
+@pytest.fixture(scope="function")
+def create_instance_json_in():
+    return read_file_lines_into_object("instance_json_in.json")
 
 
 @pytest.fixture(scope="function")
