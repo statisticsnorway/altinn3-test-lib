@@ -26,20 +26,5 @@ def basic_file_factory():
 
 
 @pytest.fixture(scope="function")
-def create_instance():
-    return read_file_lines_into_object("instance.json")
-
-
-@pytest.fixture(scope="function")
-def create_instance_json_out():
-    return read_file_lines_into_object("instance_json_out.json")
-
-
-@pytest.fixture(scope="function")
-def create_instance_json_in():
-    return read_file_lines_into_object("instance_json_in.json")
-
-
-@pytest.fixture(scope="function")
 def create_simple_prefill():
     return read_file_lines_into_object("simple_prefill.txt")
